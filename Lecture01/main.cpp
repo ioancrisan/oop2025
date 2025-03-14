@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 struct Point {
     int x;
     int y;
@@ -34,6 +36,8 @@ int main() {
 
     Point p = {1, 2};
     Rectangle r(3, 4);
+
+    cout << "Rectangle area: " << r.getArea() << endl;
 
     for (int i = 1; i <= 5; i++) {
         // TIP Press <shortcut actionId="Debug"/> to start debugging your code.
