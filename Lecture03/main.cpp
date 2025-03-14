@@ -10,9 +10,9 @@ struct Point {
 class Rectangle {
 public:
     Rectangle()
-        : width(10), height(10){}
+        : width(10), height(10), origin(new Point(0,0)){}
     Rectangle(int width, int height)
-        : width(width), height(height) {}
+        : width(width), height(height), origin(new Point(0,0)) {}
 
     /**
      * Get the area of the rectangle
@@ -24,6 +24,12 @@ public:
 
     int width;
     int height;
+
+    Point* origin;
+
+    ~Rectangle() {
+        delete origin;
+    }
 };
 
 int r_width;
