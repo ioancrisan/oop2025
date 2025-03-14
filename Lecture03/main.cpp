@@ -9,10 +9,15 @@ struct Point {
 
 class Rectangle {
 public:
-    Rectangle() {}
+    Rectangle()
+        : width(10), height(10){}
     Rectangle(int width, int height)
         : width(width), height(height) {}
 
+    /**
+     * Get the area of the rectangle
+     * @return the area of the rectangle
+     */
     int getArea() {
         return this->width * this->height;
     }
@@ -29,7 +34,7 @@ int getArea(int w, int h) {
 }
 
 Rectangle* createRectangle() {
-    return new Rectangle(7, 8);
+    return new Rectangle();
 }
 
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -46,7 +51,6 @@ int main() {
     int x = 1 + 3;
     auto r4 = createRectangle();
 
-    delete r4;
     auto y = 1;
     auto z = &y;
 
@@ -58,8 +62,10 @@ int main() {
 
     cout << "Rectangle area 2: " << (*r2).getArea() << endl;
     */
-    cout << "Rectangle area: " << r.getArea() << endl;
+    cout << "Rectangle area: " << r4->getArea() << endl;
     cout << "Rectangle area: " << getArea(r_width, r_height) << endl;
+
+    delete r4;
 
     return 0;
 }
