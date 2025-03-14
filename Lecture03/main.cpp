@@ -50,7 +50,7 @@ int main() {
     auto y = 1;
     auto z = &y;
 
-    // will display: 1 address 1
+    // will display: 1 (address) 1
     cout << y << " " << z << " " << *z << endl;
 
     /* uninitialized pointer
