@@ -10,13 +10,12 @@ namespace geometry {
 
     class Rectangle {
     public:
-        Rectangle()
-            : width(10), height(10), origin(new Point(0, 0)) {
+        Rectangle() : Rectangle(10, 10) {
         }
 
-        Rectangle(int width, int height)
-            : width(width), height(height), origin(new Point(0, 0)) {
-        }
+        Rectangle(int width, int height);
+
+        Rectangle(const Rectangle &source);
 
         /**
          * Get the area of the rectangle
@@ -42,11 +41,13 @@ namespace geometry {
          */
         int getHeight();
 
+        void setHeight(int height);
+
         /**
          * Get the origin of the rectangle
          * @return the origin of the rectangle
          */
-        Point getOrigin();
+        Point& getOrigin();
 
     private:
         int width;

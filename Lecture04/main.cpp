@@ -2,6 +2,7 @@
 
 #include "geometry/Point.h"
 #include "geometry/Rectangle.h"
+#include "geometry/Square.h"
 
 using namespace std;
 using namespace geometry;
@@ -10,25 +11,30 @@ using namespace geometry;
 // int r_width;
 // int r_height;
 
-int getArea(int w, int h) {
-    return w * h;
-}
-
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
-    Point p = {1, 2};
-    Rectangle r(-3, 4);
+    Rectangle r(3, 4);
+    auto r1 = r; // call copy constructor
+    auto r2(r);  // call copy constructor
+
+    auto s = new Square(22);
+    s->setHeight(20);
+    s->setWidth(10);
 
     r.setWidth(10);
+    r1.setWidth(20);
 
     // cannot access private members
     // r.width = 5;
-    auto o = r.getOrigin();
+    Point& o = r.getOrigin();
     o.x = 4;
 
-    cout << "Rectangle origin: " << r.getOrigin().x << " " << r.getOrigin().y << endl;
-    cout << "Rectangle origin: " << o.x << " " << o.y << endl;
+    cout << "r1 w/h: " << r1.getWidth() << " " << r1.getHeight() << endl;
+    cout << "r w/h: " << r.getWidth() << " " << r.getHeight() << endl;
+    cout << "r1 origin: " << r.getOrigin().x << " " << r.getOrigin().y << endl;
+    cout << "r origin: " << r.getOrigin().x << " " << r.getOrigin().y << endl;
+    cout << "origin: " << o.x << " " << o.y << endl;
     cout << "Rectangle area: " << r.getArea() << endl;
 
     return 0;

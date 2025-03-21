@@ -7,4 +7,6 @@ add_executable(Lecture04 main.cpp
         geometry/Rectangle.cpp
         geometry/Rectangle.h
         geometry/Point.h
+        geometry/Square.cpp
+        geometry/Square.h
 )

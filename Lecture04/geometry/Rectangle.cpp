@@ -7,6 +7,17 @@
 #include <stdexcept>
 
 namespace geometry {
+    Rectangle::Rectangle(int width, int height): origin(new Point(0, 0)) {
+        setWidth(width);
+        setHeight(height);
+    }
+
+    Rectangle::Rectangle(const Rectangle &source) {
+        width = source.width;
+        height = source.height;
+        origin = new Point(source.origin->x, source.origin->y);
+    }
+
     int Rectangle::getArea() {
         return this->width * this->height;
     }
@@ -34,7 +45,14 @@ namespace geometry {
         return this->height;
     }
 
-    Point Rectangle::getOrigin() {
+    void Rectangle::setHeight(int height) {
+        if (height <= 0) {
+            throw std::invalid_argument("Height must be greater than 0");
+        }
+        this->height = height;
+    }
+
+    Point& Rectangle::getOrigin() {
         return *this->origin;
     }
 } // geometry
