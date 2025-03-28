@@ -19,11 +19,11 @@ int main() {
     auto r2(r);  // call copy constructor
 
     auto s = new Square(22);
-    s->setHeight(-15);
-    cout << "Square area: " << s->getArea() << endl;
+    s->setHeight(15);
+    cout << "Square perimeter: " << s->getPerimeter() << endl;
 
     s->setWidth(10);
-    cout << "Square area: " << s->getArea() << endl;
+    cout << "Square perimeter: " << s->getPerimeter() << endl;
 
     r.setWidth(10);
     r1.setWidth(20);
