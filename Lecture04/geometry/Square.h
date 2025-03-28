@@ -14,6 +14,12 @@ namespace geometry {
 
         explicit Square(int length)
             : Rectangle(length, length) {  }
+
+        void setWidth(int width);
+
+        void setHeight(int height);
+
+        int getPerimeter();
     };
 }
 

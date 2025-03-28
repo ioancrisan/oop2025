@@ -49,7 +49,10 @@ namespace geometry {
          */
         Point& getOrigin();
 
-    private:
+//    protected: // protected members are accessible from derived classes
+                 // recommended to use only on methods, not member variables.
+                 // CAUTION: use with case, not to break encapsulation!.
+    protected:
         int width;
         int height;
 
