@@ -33,7 +33,7 @@ namespace geometry {
          */
         int getWidth();
 
-        void setWidth(int width);
+        virtual void setWidth(int width);
 
         /**
          * Get the height of the rectangle
@@ -41,7 +41,7 @@ namespace geometry {
          */
         int getHeight();
 
-        void setHeight(int height);
+        virtual void setHeight(int height);
 
         /**
          * Get the origin of the rectangle

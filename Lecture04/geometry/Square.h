@@ -15,9 +15,9 @@ namespace geometry {
         explicit Square(int length)
             : Rectangle(length, length) {  }
 
-        void setWidth(int width);
+        void setWidth(int width) override;
 
-        void setHeight(int height);
+        void setHeight(int height) override;
 
         int getPerimeter();
     };
