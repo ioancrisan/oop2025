@@ -25,7 +25,10 @@ namespace geometry {
 
         static Rectangle *create();
 
-        ~Rectangle();
+        /**
+         * Declare destructors always as virtual.
+         */
+        virtual ~Rectangle();
 
         /**
          * Get the width of the rectangle

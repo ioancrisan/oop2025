@@ -7,7 +7,7 @@
 #include "Rectangle.h"
 
 namespace geometry {
-    class Square : public Rectangle {
+    class Square final : public Rectangle {
     public:
         Square()
             : Square(10) {  }
